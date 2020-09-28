@@ -5,8 +5,13 @@ import interaccionImg from "../assets/images/Interaccionfugaz.png";
 import diversidadImg from "../assets/images/DiversidadAsegurada.png";
 import visibleImg from "../assets/images/visibleImg.png";
 
+import "./style/Benefits.css";
+
 const Benefits = () => (
   <Container fluid="true">
+    <div className="Titulo">
+      <h2>Beneficios</h2>
+    </div>
     <Row sm={3} className="justify-content-md-center">
       <Col md="auto">
         <Card style={{ width: "18rem", margin: "0 2%" }}>

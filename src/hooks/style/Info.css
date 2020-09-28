@@ -5,21 +5,15 @@
 
 .titulo {
   color: white;
-  font-size: 58px;
+  font-size: 72px;
+  font-family: "Lucida Console", Monaco, monospace;
   font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 25px;
-}
-
-.subtitulo {
-  font-size: 20px;
-  color: #343a40;
-  margin-top: 0;
-  margin-bottom: 5px;
+  margin-top: 1%;
+  margin-bottom: 15px;
 }
 
 .video video {
   margin-top: 20px;
-  width: 80%;
+  width: 85%;
   height: auto;
 }

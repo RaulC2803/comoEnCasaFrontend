@@ -45,16 +45,15 @@ const Footer = () => (
         </Row>
         <Row>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            inventore reiciendis repellat maiores veniam. Quia distinctio qui
-            possimus suscipit eum, enim dolores non voluptatem accusamus eaque.
-            Sit neque excepturi soluta!
+            Compañía creada en Lima, Perú a mediados del 2020 dentro de la
+            crisis mundial que generó la pandemia.
           </p>
         </Row>
         <Row>
           <FacebookIcon className="Iconos" />
           <TwitterIcon className="Iconos" />
           <GitHubIcon className="Iconos" />
+          <small>&copy; Copyright 2020, HackBerry Corporation</small>
         </Row>
       </Col>
     </Row>

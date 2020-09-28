@@ -1,48 +1,34 @@
 import React from "react";
-import { Form, Button, Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import SendIcon from "@material-ui/icons/Send";
 
 import "./style/Register.css";
 
 const Register = () => (
-  <div className="Formulario">
-    <h1 className="titulo-Formulario">Participa de este cambio</h1>
-    <Form>
-      <Form.Row>
-        <Col>
-          <Form.Group controlId="nombreForm">
-            <Form.Label>Nombre</Form.Label>
-            <Form.Control type="text" />
-          </Form.Group>
-        </Col>
-        <Col>
-          <Form.Group controlId="apellidoForm">
-            <Form.Label>Apellido</Form.Label>
-            <Form.Control type="text" />
-          </Form.Group>
-        </Col>
-      </Form.Row>
-      <Form.Group controlId="emailForm">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="name@example.com" />
-      </Form.Group>
-      <Form.Row>
-        <Col>
-          <Form.Group controlId="dniForm">
-            <Form.Label>DNI</Form.Label>
-            <Form.Control type="text" />
-          </Form.Group>
-        </Col>
-        <Col>
-          <Form.Group controlId="passwordForm">
-            <Form.Label>Contraseña</Form.Label>
-            <Form.Control type="password" />
-          </Form.Group>
-        </Col>
-      </Form.Row>
-      <Button className="Button-Register" variant="dark" type="submit">
-        Únete a nosotros
+  <div>
+    <div className="Form-Usuario">
+      <h4>Comenzar como Vendedor</h4>
+      <p>
+        No guardes tu talento solo para ti!. Empieza a comercializar tus
+        productos con los demás, para que vean tu talento y calidad. Todos
+        ganamos!
+      </p>
+      <Button variant="dark">
+        ÚNETE <SendIcon />
       </Button>
-    </Form>
+    </div>
+    <div className="Form-Usuario">
+      <h4>Comenzar como Comprador</h4>
+      <p>
+        Encuentra todo lo que puedas imaginar dentro del mundo de hecho con las
+        propias manos de las personas. Recibirás un trato amigable de los
+        vendedores, no esperarás mucho para que tu pedido llegue, y pagarás el
+        precio justo.
+      </p>
+      <Button variant="dark">
+        ÚNETE <SendIcon />
+      </Button>
+    </div>
   </div>
 );
 

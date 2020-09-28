@@ -3,6 +3,7 @@ import NavBar from "../hooks/NavBar";
 import Info from "../hooks/Info";
 import Register from "../hooks/Register.jsx";
 import Benefits from "../hooks/Benefits";
+import Nosotros from "../hooks/Nosotros";
 import Footer from "../hooks/Footer";
 import { Row, Col } from "react-bootstrap";
 
@@ -25,6 +26,9 @@ const LandingPage = () => (
     </div>
     <div className="Container2">
       <Benefits />
+    </div>
+    <div className="Container3">
+      <Nosotros />
     </div>
     <Footer></Footer>
   </div>
