@@ -9,9 +9,9 @@ module.exports = {
   },
   output: {
     //Directorio al cual se irá el archivo final
-    path: path.resolve(__dirname, "dist", "js"),
+    path: path.resolve(__dirname, "dist"),
     //nombre del archivo final
-    filename: "bundle-[name].js",
+    filename: "src/[name].bundle.js",
   },
   module: {
     rules: [
