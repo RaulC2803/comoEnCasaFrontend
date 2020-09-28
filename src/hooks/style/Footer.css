@@ -1,0 +1,18 @@
+.footer-style {
+  padding: 1% 5%;
+  background-color: black;
+}
+
+.footer-style p {
+  color: white;
+}
+
+.footer-style h3 {
+  color: white;
+}
+
+.Iconos {
+  font-size: 14px;
+  margin-right: 10px;
+  color: white;
+}

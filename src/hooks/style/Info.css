@@ -1,0 +1,25 @@
+.Container {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.titulo {
+  color: white;
+  font-size: 58px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.subtitulo {
+  font-size: 20px;
+  color: #343a40;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.video video {
+  margin-top: 20px;
+  width: 80%;
+  height: auto;
+}

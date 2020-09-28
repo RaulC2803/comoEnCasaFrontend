@@ -1,0 +1,16 @@
+.Formulario {
+  padding: 7% 3%;
+  border-radius: 0.7em 0.7em;
+  background-color: #bcbec0;
+}
+
+.titulo-Formulario {
+  color: white;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 5%;
+}
+
+.Button-Register {
+  margin-top: 5%;
+}

@@ -1,0 +1,17 @@
+* {
+  margin: 0 0;
+}
+
+.Container {
+  padding-top: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 3%;
+  background-color: #85d0fc;
+}
+
+.Container2 {
+  padding: 3% 3%;
+  display: flex;
+  justify-content: center;
+}
