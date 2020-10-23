@@ -1,6 +1,8 @@
 import React from "react";
+import RegisterPageCustomer from "../pages/RegisterPageCustomer.jsx";
 import { Button } from "react-bootstrap";
 import SendIcon from "@material-ui/icons/Send";
+import { Link, useRouteMatch } from "react-router-dom";
 
 import "./style/Register.css";
 
@@ -14,7 +16,9 @@ const Register = () => (
         ganamos!
       </p>
       <Button variant="dark">
-        ÚNETE <SendIcon />
+        <Link to="/vendedor" className="button-register">
+          ÚNETE <SendIcon />
+        </Link>
       </Button>
     </div>
     <div className="Form-Usuario">
@@ -25,9 +29,11 @@ const Register = () => (
         vendedores, no esperarás mucho para que tu pedido llegue, y pagarás el
         precio justo.
       </p>
-      <Button variant="dark">
-        ÚNETE <SendIcon />
-      </Button>
+      <Link to="/comprador" className="button-register">
+        <Button variant="dark">
+          ÚNETE <SendIcon />
+        </Button>
+      </Link>
     </div>
   </div>
 );

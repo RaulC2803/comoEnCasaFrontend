@@ -15,3 +15,13 @@
   border-radius: 0.7em 0.7em;
   background-color: white;
 }
+
+.button-register {
+  color: white;
+  text-decoration: none;
+}
+
+.button-register:hover {
+  color: white;
+  text-decoration: none;
+}

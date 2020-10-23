@@ -1,0 +1,13 @@
+.landing {
+  color: white;
+  text-decoration: none;
+}
+
+.landing:link {
+  text-decoration: none;
+}
+
+.landing:hover {
+  color: white;
+  text-decoration: none;
+}

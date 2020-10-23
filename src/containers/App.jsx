@@ -1,8 +1,36 @@
 import React from "react";
-import LandingPage from "../pages/LandingPage";
+import LandingPage from "../pages/LandingPage.jsx";
+import RegisterPageCustomer from "../pages/RegisterPageCustomer.jsx";
+import RegisterPageSeller from "../pages/RegisterPageSeller.jsx";
+import Login from "../pages/Login.jsx";
 
-import "./style/App.css"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 
-const App = () => <LandingPage />;
+import "./style/App.css";
+
+const NotFound = () => (
+  <div>
+    <h1>Página no Encontrada</h1>
+  </div>
+);
+
+const App = () => (
+  <Router>
+    <Switch>
+      <Redirect exact from="/" to="/home" />
+      <Route exact path="/home" component={LandingPage} />
+      <Route exact path="/comprador" component={RegisterPageCustomer} />
+      <Route exact path="/vendedor" component={RegisterPageSeller} />
+      <Route exact path="/login" component={Login} />
+      <Route component={NotFound} />
+    </Switch>
+  </Router>
+);
 
 export default App;

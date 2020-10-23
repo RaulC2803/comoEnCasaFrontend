@@ -4,14 +4,13 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, "src", "index.js")
+    app: path.resolve(__dirname, "src", "index.js"),
   },
   output: {
     //Directorio al cual se irá el archivo final
     path: path.resolve(__dirname, "dist"),
     filename: "js/[name].js",
-    publicPath: "http://localhost:9000/",
-    chunkFilename: "js/[id].[chunkhash].js"
+    chunkFilename: "js/[id].[chunkhash].js",
 
     //nombre del archivo final
   },
@@ -19,7 +18,8 @@ module.exports = {
     contentBase: path.resolve(__dirname, "dist"),
     hot: true,
     open: true,
-    port: 9000
+    port: 9000,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -27,14 +27,14 @@ module.exports = {
         test: /\.(js|jsx)$/,
         use: "babel-loader",
         //que tipos de archivo no quiero que se aplica el babel loader
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         //test: tipo de archivo
         test: /\.css$/,
         //use: que hacer
         //
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(jpg|png|gif|woff|eot|ttf|svg|mp4|webm)$/i,
@@ -42,19 +42,19 @@ module.exports = {
           loader: "file-loader",
           options: {
             //limite del tamaño del archivo
-            name: "[folder]/[name].[ext]"
-          }
-        }
-      }
-    ]
+            name: "[folder]/[name].[ext]",
+          },
+        },
+      },
+    ],
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html")
-    })
-  ]
+      template: path.resolve(__dirname, "public", "index.html"),
+    }),
+  ],
 };
