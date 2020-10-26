@@ -4,6 +4,10 @@ import LandingPage from "../pages/LandingPage.jsx";
 import RegisterPageCustomer from "../pages/RegisterPageCustomer.jsx";
 import RegisterPageSeller from "../pages/RegisterPageSeller.jsx";
 import Login from "../pages/Login.jsx";
+import RegisterPageProduct from "../pages/RegisterPageProduct.jsx"
+import PageMyProducts from "../pages/PageMyProducts.jsx"
+import ShoppingHistoryPage from "../pages/ShoppingHistoryPage";
+import SalesHistoryPage from "../pages/SalesHistoryPage";
 
 import {
   BrowserRouter as Router,
@@ -32,6 +36,10 @@ const App = () => (
       <Route exact path="/comprador" component={RegisterPageCustomer} />
       <Route exact path="/vendedor" component={RegisterPageSeller} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/registrarProducto" component={RegisterPageProduct} />
+      <Route exact path="/myProducts" component={PageMyProducts} />
+      <Route exact path="/historialCompras" component={ShoppingHistoryPage} />
+      <Route exact path="/historialVentas" component={SalesHistoryPage} />
       <Route component={NotFound} />
     </Switch>
   </Router>
