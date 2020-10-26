@@ -6,7 +6,6 @@ import "./style/RegisterPage.css";
 
 const RegisterPageCustomer = () => (
   <div className="container-page">
-    <NavBar />
     <RegisterCustomer />
   </div>
 );

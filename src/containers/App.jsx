@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "../hooks/NavBar.jsx";
 import LandingPage from "../pages/LandingPage.jsx";
 import RegisterPageCustomer from "../pages/RegisterPageCustomer.jsx";
 import RegisterPageSeller from "../pages/RegisterPageSeller.jsx";
@@ -22,6 +23,9 @@ const NotFound = () => (
 
 const App = () => (
   <Router>
+    <nav>
+      <NavBar />
+    </nav>
     <Switch>
       <Redirect exact from="/" to="/home" />
       <Route exact path="/home" component={LandingPage} />

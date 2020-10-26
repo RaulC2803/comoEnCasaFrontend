@@ -11,9 +11,6 @@ import "./style/LandingPage.css";
 
 const LandingPage = () => (
   <div>
-    <nav>
-      <NavBar />
-    </nav>
     <div className="Container">
       <Row md={2}>
         <Col>
