@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import "../Components/style/RegisterProduct.css";
 import RegisterProductForm from "../Components/RegisterProduct.jsx";
 
 const API = "https://comoencasa-289703.rj.r.appspot.com/producto/registrar{id}";
@@ -95,17 +95,12 @@ const RegisterProduct = () => {
   } else {
     console.log("3")
     return (
-      <div className="container-register">
-        <div className="container-form">
-          <h2>REGISTRAR COMO PRODUCTO</h2>
           <RegisterProductForm
             handleSubmit={handleSubmit}
             handleChange={handleChange}
             validated={validated}
             formErrors={formErrors}
           />
-        </div>
-      </div>
     );
   }
 };

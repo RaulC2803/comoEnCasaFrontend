@@ -4,8 +4,8 @@ import { Form, Button, Col, Row, Dropdown, DropdownButton } from "react-bootstra
 import "./style/RegisterProduct.css";
 
 const RegisterProductForm = (props) => (
-  <div className="container-register">
-  <div className="container-form">
+  <div className="container-register-Product">
+  <div className="container-form-Product">
     <h3> Registrar Producto </h3>
     <Form noValidate validated={props.validated}>
       <Form.Row>
