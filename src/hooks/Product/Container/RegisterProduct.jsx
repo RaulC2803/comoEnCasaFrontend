@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import RegisterProduct from "../Components/RegisterProduct.jsx";
+import RegisterProductForm from "../Components/RegisterProduct.jsx";
 
 const API = "https://comoencasa-289703.rj.r.appspot.com/producto/registrar{id}";
 
@@ -21,28 +21,51 @@ const RegisterProduct = () => {
     stock: ""
   });
 
-  const handleNameChange = (event) => {
-    setProduct({ ...product, name: event.target.value });
+  const formErrors = {
+    name: "Ingrese un nombre de producto válido",
+    price: "Ingrese un precio válido",
+    description: "ingrese una descripcion válida",
+    images: "ingrese un formato de imagen válido",
+    tags: "ingrese tags válidos",
+    stock: "Ingrese una cantidad de stock válida",
   };
 
-  const handlePriceChange = (event) => {
-    setProduct({ ...product, price: event.target.value });
-  };
+  const [validated, setValidated] = useState(false);
 
-  const handleDescriptionChange = (event) => {
-    setProduct({ ...product, description: event.target.value });
-  };
+  const handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
 
-  const handleImagesChange = (event) => {
-    setProduct({ ...product, images: event.target.value });
-  };
-
-  const handleTagsChange = (event) => {
-    setProduct({ ...product, tags: event.target.value });
-  };
-
-  const handleStockChange = (event) => {
-      setProduct({ ...product, stock: event.target.value });
+    switch (name) {
+      case "name":
+        setProduct({ ...product, name: value });
+        break;
+      case "price":
+        setProduct({ ...product, price: value });
+        break;
+      case "description":
+        setProduct({ ...product, description: value });
+        break;
+      case "images":
+        setProduct({ ...product, images: value });
+        break;
+      case "tags":
+        setProduct({ ...product, tags: value });
+        break;
+      case "stock":
+        setProduct({ ...product, stock: value });
+        break;
+      default:
+        break;
+    }
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+      event.preventDefault();
+      setValidated(false);
+    } else {
+      setValidated(true);
+    }
   };
 
   const handleSubmit = () => {
@@ -58,19 +81,33 @@ const RegisterProduct = () => {
       });
   };
 
-  return (
-    <div>
-      <RegisterProductForm
-        handleNameChange={handleNameChange}
-        handlePriceChange={handlePriceChange}
-        handleDescriptionChange={handleDescriptionChange}
-        handleImagesChange={handleImagesChange}
-        handleTagsChange={handleTagsChange}
-        handleStockChange={handleStockChange}
-        handleSubmit={handleSubmit}
-      />
-    </div>
-  );
+  if (state.data) {
+    console.log("1")
+    return <Redirect to="/registrarProducto" />;
+  }
+  if (state.isLoading === true) {
+    console.log("2")
+    return (
+      <div>
+        <PageLoading />
+      </div>
+    );
+  } else {
+    console.log("3")
+    return (
+      <div className="container-register">
+        <div className="container-form">
+          <h2>REGISTRAR COMO PRODUCTO</h2>
+          <RegisterProductForm
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            validated={validated}
+            formErrors={formErrors}
+          />
+        </div>
+      </div>
+    );
+  }
 };
 
 export default RegisterProduct;
