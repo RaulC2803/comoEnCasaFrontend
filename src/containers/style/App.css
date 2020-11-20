@@ -2,3 +2,11 @@
   margin: 0 0;
   padding: 0 0;
 }
+
+.container-notfound {
+  display: flex;
+  padding-top: 50vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

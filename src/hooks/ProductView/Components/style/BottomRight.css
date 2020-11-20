@@ -1,0 +1,20 @@
+.title-review {
+  margin-top: 20px;
+  padding: 0px;
+  width: 100%;
+}
+
+.title-review p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.container-review {
+  margin-top: 40px;
+}
+
+#review-view {
+  height: 250px;
+}

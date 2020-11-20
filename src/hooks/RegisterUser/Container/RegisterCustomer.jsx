@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import api from "../../../services/Comprador.js";
 import RegisterCustomerForm from "../Components/RegisterCustomer.jsx";
 import PageLoading from "../../../pages/PageLoading.jsx";
+import ubigeo from "../../../services/ubigeo.js";
 
 import "../Components/style/Register.css";
 
@@ -38,6 +39,72 @@ const RegisterCustomer = () => {
   const [validated, setValidated] = useState(false);
 
   const emailRegex = RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g);
+
+  const [optionProvince, setOptionProvince] = useState([]);
+  const [optionDistrit, setOptionDistrit] = useState([]);
+  const [departament, setDepartament] = useState("");
+  const [province, setProvince] = useState("");
+  const [distrit, setDistrit] = useState("");
+  const [province_array, setProvinceArray] = useState([]);
+  const [distrit_array, setDistritArray] = useState([]);
+
+  const loadUbigeos = () => {
+    const departament_array = ubigeo.departamentos;
+    let items = [];
+    departament_array.forEach((dep) => {
+      items.push(
+        <option key={dep.id_ubigeo} value={dep.id_ubigeo}>
+          {dep.nombre_ubigeo}
+        </option>
+      );
+    });
+    return items;
+  };
+
+  const handleChangeDepartaments = (event) => {
+    const id_ubigeo = event.target.value;
+    const pro_array = ubigeo.provincias[id_ubigeo];
+
+    const index = event.target.selectedIndex - 1;
+    const depa_select = ubigeo.departamentos[index];
+
+    let items = [];
+    pro_array.forEach((pro) => {
+      items.push(
+        <option key={pro.id_ubigeo} value={pro.id_ubigeo}>
+          {pro.nombre_ubigeo}
+        </option>
+      );
+    });
+    setOptionProvince(items);
+    setDepartament(depa_select);
+    setProvinceArray(pro_array);
+  };
+
+  const handleChangeProvince = (event) => {
+    const id_ubigeo = event.target.value;
+
+    const index = event.target.selectedIndex - 1;
+
+    const dist_array = ubigeo.distritos[id_ubigeo];
+
+    let items = [];
+    dist_array.forEach((dis) => {
+      items.push(
+        <option key={dis.id_ubigeo} value={dis.id_ubigeo}>
+          {dis.nombre_ubigeo}
+        </option>
+      );
+    });
+    setOptionDistrit(items);
+    setProvince(province_array[index]);
+    setDistritArray(dist_array);
+  };
+
+  const handleChangeDistrit = (event) => {
+    const index = event.target.selectedIndex - 1;
+    setDistrit(distrit_array[index]);
+  };
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -82,7 +149,17 @@ const RegisterCustomer = () => {
     if (validated) {
       setState({ ...state, isLoading: true, error: null });
       try {
-        const res = await api.customer.registerCustomer(customer);
+        const res = await api.customer.registerCustomer({
+          ...customer,
+          address:
+            customer.address +
+            " " +
+            departament.nombre_ubigeo +
+            ", " +
+            province.nombre_ubigeo +
+            ", " +
+            distrit.nombre_ubigeo,
+        });
         setState({ ...state, isLoading: false, data: res });
       } catch (error) {
         setState({ ...state, isLoading: false, error: error });
@@ -93,6 +170,7 @@ const RegisterCustomer = () => {
   };
 
   if (state.data) {
+    console.log(state.data);
     return <Redirect to="/login" />;
   }
   if (state.isLoading === true) {
@@ -104,13 +182,19 @@ const RegisterCustomer = () => {
   } else {
     return (
       <div className="container-register">
-        <div className="container-form">
+        <div className="form-register">
           <h2>REGISTRARSE COMO COMPRADOR</h2>
           <RegisterCustomerForm
             handleSubmit={handleSubmit}
             handleChange={handleChange}
             validated={validated}
             formErrors={formErrors}
+            loadUbigeos={loadUbigeos}
+            handleChangeDepartaments={handleChangeDepartaments}
+            handleChangeProvince={handleChangeProvince}
+            handleChangeDistrit={handleChangeDistrit}
+            optionProvince={optionProvince}
+            optionDistrit={optionDistrit}
           />
         </div>
       </div>

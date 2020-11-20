@@ -1,4 +1,4 @@
-.container-register {
+.container-registerProduct {
   padding-top: 5%;
   height: 110vh;
   width: 100%;
@@ -9,7 +9,7 @@
   background-color: #85d0fc;
 }
 
-.container-form {
+.form-registerProduct {
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,8 @@
   padding: 2% 2%;
 }
 
-.container-form h2 {
+.form-register h2 {
   padding-top: 0;
   padding-bottom: 3%;
 }
+

@@ -1,15 +1,13 @@
 .Container {
   margin: 0 0;
-  padding: 0 0;
+  padding: 0px 0px;
 }
 
 .titulo {
+  margin-bottom: 25px;
   color: white;
   font-size: 72px;
-  font-family: "Lucida Console", Monaco, monospace;
   font-weight: bold;
-  margin-top: 1%;
-  margin-bottom: 15px;
 }
 
 .video video {

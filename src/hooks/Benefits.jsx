@@ -14,7 +14,7 @@ const Benefits = () => (
     </div>
     <Row sm={3} className="justify-content-md-center">
       <Col md="auto">
-        <Card style={{ width: "18rem", margin: "0 2%" }}>
+        <Card className="card-benefits">
           <Card.Img variant="top" src={interaccionImg} alt="Image1" />
           <Card.Body>
             <Card.Title>Interacción Fugaz</Card.Title>
@@ -26,7 +26,7 @@ const Benefits = () => (
         </Card>
       </Col>
       <Col md="auto">
-        <Card style={{ width: "18rem" }}>
+        <Card className="card-benefits">
           <Card.Img variant="top" src={diversidadImg} alt="Image1" />
           <Card.Body>
             <Card.Title>Diversidad Asegurada</Card.Title>
@@ -38,7 +38,7 @@ const Benefits = () => (
         </Card>
       </Col>
       <Col md="auto">
-        <Card style={{ width: "18rem" }}>
+        <Card className="card-benefits">
           <Card.Img variant="top" src={visibleImg} />
           <Card.Body>
             <Card.Title>Hazte Visible</Card.Title>

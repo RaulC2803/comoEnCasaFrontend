@@ -104,7 +104,7 @@ const RegisterSeller = () => {
   } else {
     return (
       <div className="container-register">
-        <div className="container-form">
+        <div className="form-register">
           <h2>REGISTRARSE COMO VENDEDOR</h2>
           <RegisterSellerForm
             handleSubmit={handleSubmit}

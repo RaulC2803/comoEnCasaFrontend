@@ -1,8 +1,19 @@
 .Titulo {
-  margin-top: 5%;
-  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3%;
 }
 
 .Titulo h2 {
   font-size: 40px;
+}
+
+.card-benefits {
+  width: 18rem;
+  height: 25rem;
+}
+
+.card-benefits img {
+  width: auto;
+  height: 200px;
 }

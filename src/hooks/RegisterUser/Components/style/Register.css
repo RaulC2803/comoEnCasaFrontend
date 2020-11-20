@@ -1,5 +1,4 @@
 .container-register {
-  padding-top: 5%;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -9,8 +8,8 @@
   background-color: #85d0fc;
 }
 
-.container-form {
-  width: 40%;
+.form-register {
+  width: 60%;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -19,9 +18,11 @@
   padding: 2% 2%;
 }
 
-.container-form h2 {
+.form-register h2 {
   padding-top: 0;
   padding-bottom: 3%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .form-button {
@@ -35,4 +36,12 @@
 .errorMessage {
   font-size: 12px;
   color: red;
+}
+
+@media (max-height: 900px) {
+  .container-register {
+    padding-top: 10%;
+    height: 110vh;
+    padding-bottom: 5%;
+  }
 }

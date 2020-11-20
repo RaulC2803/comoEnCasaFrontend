@@ -110,26 +110,43 @@ const RegisterCustomerForm = (props) => (
     {/* Poner la base de datos se las regiones del Peru */}
     <Form.Row>
       <Form.Group as={Col} controlId="formGridCity">
-        <Form.Label>Región</Form.Label>
-        <Form.Control as="select" defaultValue="Elija...">
+        <Form.Label>Departamento</Form.Label>
+        <Form.Control
+          required
+          name="departament"
+          as="select"
+          defaultValue="Elija..."
+          onChange={props.handleChangeDepartaments}
+        >
           <option>Elija...</option>
-          <option>...</option>
+          {props.loadUbigeos()}
         </Form.Control>
       </Form.Group>
 
       <Form.Group as={Col} controlId="formGridState">
         <Form.Label>Provincia</Form.Label>
-        <Form.Control as="select" defaultValue="Elija...">
+        <Form.Control
+          required
+          name="province"
+          as="select"
+          defaultValue="Elija..."
+          onChange={props.handleChangeProvince}
+        >
           <option>Elija...</option>
-          <option>...</option>
+          {props.optionProvince}
         </Form.Control>
       </Form.Group>
 
       <Form.Group as={Col} controlId="formGridZip">
         <Form.Label>Distrito</Form.Label>
-        <Form.Control as="select" defaultValue="Elija...">
+        <Form.Control
+          name="distrit"
+          as="select"
+          defaultValue="Elija..."
+          onChange={props.handleChangeDistrit}
+        >
           <option>Elija...</option>
-          <option>...</option>
+          {props.optionDistrit}
         </Form.Control>
       </Form.Group>
     </Form.Row>

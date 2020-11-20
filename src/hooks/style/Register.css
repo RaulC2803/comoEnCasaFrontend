@@ -1,3 +1,7 @@
+.Container-register-info {
+  margin: 0 0;
+  padding-top: 15px;
+}
 .titulo-Formulario {
   color: white;
   font-weight: bold;
@@ -10,7 +14,10 @@
 }
 
 .Form-Usuario {
-  margin: 5% 5%;
+  margin-top: 0px;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
   padding: 5% 5%;
   border-radius: 0.7em 0.7em;
   background-color: white;

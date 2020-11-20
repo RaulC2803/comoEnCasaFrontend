@@ -1,12 +1,10 @@
-import React from 'react'
-import NavBar from "../hooks/NavBar"
-import SalesHistory from "../hooks/Ventas/Components/SalesHistory"
+import React from "react";
+import SalesHistory from "../hooks/Ventas/Components/SalesHistory";
 
 const SalesHistoryPage = () => (
-    <div className="container-page">
-        <NavBar />
-        <SalesHistory />
-    </div>
-)
+  <div className="container-page">
+    <SalesHistory />
+  </div>
+);
 
-export default SalesHistoryPage
+export default SalesHistoryPage;

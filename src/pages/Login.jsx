@@ -1,13 +1,11 @@
 import React from "react";
-import NavBar from "../hooks/NavBar.jsx";
 import { Form, Row, Col, Button } from "react-bootstrap";
 
 import "./style/Login.css";
 
 const Login = () => (
-  <div>
-    <NavBar />
-    <div className="container-login">
+  <div className="container-login">
+    <div className="container-login-form">
       <h2>Ingresar</h2>
       <Form>
         <Form.Group as={Row} controlId="formHorizontalEmail">

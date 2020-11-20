@@ -1,0 +1,28 @@
+.Container-Search {
+  background-color: white;
+  width: 100%;
+  padding: 2%;
+  border-radius: 10px 10px;
+}
+
+.sub-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.sub-container img {
+  width: 50px;
+  height: 50px;
+}
+
+.Search-Form {
+  padding-left: 2%;
+  width: 100%;
+}
+
+.bar {
+  width: 100%;
+  border: 1px solid black;
+}

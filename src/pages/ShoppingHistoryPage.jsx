@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "../hooks/NavBar.jsx"
-import ShoppingHistory from "../hooks/Compras/Components/ShoppingHistory"
+import ShoppingHistory from "../hooks/Compras/Components/ShoppingHistory";
+
+import "./style/ShoppingHistoryPage.css";
 
 const ShoppingHistoryPage = () => (
-    <div className="container-page">
-        <NavBar />
-        <ShoppingHistory />
-    </div>
+  <div className="container-shopping-history">
+    <ShoppingHistory />
+  </div>
 );
 
-export default ShoppingHistoryPage
+export default ShoppingHistoryPage;
