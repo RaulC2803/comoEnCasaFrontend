@@ -10,7 +10,7 @@ import RestaurantTwoToneIcon from "@material-ui/icons/RestaurantTwoTone";
 
 import "./style/CategoriesShorts.css";
 
-const CategoriesShorts = () => {
+const CategoriesShortsForm = () => {
   const render1 = (props) => (
     <Tooltip id="button-Tooltip" {...props}>
       Comida
@@ -112,4 +112,4 @@ const CategoriesShorts = () => {
     </div>
   );
 };
-export default CategoriesShorts;
+export default CategoriesShortsForm;

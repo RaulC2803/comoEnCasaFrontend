@@ -1,0 +1,13 @@
+.row-review {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+}
+
+.user-review {
+  font-weight: bold;
+}
+
+.text-review {
+  font-size: 14px;
+}

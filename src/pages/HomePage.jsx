@@ -1,7 +1,7 @@
 import React from "react";
-import SearchBar from "../hooks/Home/Components/SearchHome.jsx";
-import CategoriesShorts from "../hooks/Home/Components/CategoriesShorts";
-import ProductList from "../hooks/Home/Components/ProductList";
+import SearchBar from "../hooks/Home/Container/SearchHome.jsx";
+import CategoriesShorts from "../hooks/Home/Container/CategoriesShorts";
+import ProductList from "../hooks/Home/Container/ProductList";
 
 import "./style/HomePage.css";
 

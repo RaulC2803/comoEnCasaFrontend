@@ -4,7 +4,7 @@ import { Form, Image, Button } from "react-bootstrap";
 
 import "./style/SearchBar.css";
 
-const SearchBar = () => (
+const SearchBarForm = () => (
   <div className="Container-Search">
     <div className="sub-container">
       <Image src={visibleImg} roundedCircle />
@@ -21,4 +21,4 @@ const SearchBar = () => (
   </div>
 );
 
-export default SearchBar;
+export default SearchBarForm;

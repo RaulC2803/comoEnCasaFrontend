@@ -4,7 +4,7 @@ import { Col, Image } from "react-bootstrap";
 import test from "../../../assets/images/DiversidadAsegurada.png";
 import "./style/Product.css";
 
-const Product = () => (
+const ProductForm = () => (
   <Col lg="auto" className="col-item">
     <div className="product-item">
       <Image src={test} />
@@ -17,4 +17,4 @@ const Product = () => (
   </Col>
 );
 
-export default Product;
+export default ProductForm;
