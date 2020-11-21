@@ -2,7 +2,9 @@ import React from "react";
 import { Row, Col, Image, Button, ProgressBar } from "react-bootstrap";
 import StarIcon from "@material-ui/icons/Star";
 
-const BottomLeft = () => (
+import "./style/BottomLeft.css";
+
+const BottomLeftForm = () => (
   <Col>
     <Row className="container-parts">
       <Col>
@@ -68,4 +70,4 @@ const BottomLeft = () => (
   </Col>
 );
 
-export default BottomLeft;
+export default BottomLeftForm;

@@ -3,7 +3,9 @@ import { Col, Row, Image } from "react-bootstrap";
 import test from "../../../assets/images/DiversidadAsegurada.png";
 import LocalGroceryStoreIcon from "@material-ui/icons/LocalGroceryStore";
 
-const Topleft = () => (
+import "./style/TopLeft.css";
+
+const TopleftForm = () => (
   <Col>
     <Row className="container-parts">
       <Col>
@@ -31,4 +33,4 @@ const Topleft = () => (
   </Col>
 );
 
-export default Topleft;
+export default TopleftForm;

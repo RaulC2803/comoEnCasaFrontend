@@ -10,8 +10,8 @@ import ShoppingHistoryPage from "../pages/ShoppingHistoryPage";
 import SalesHistoryPage from "../pages/SalesHistoryPage";
 import HomePage from "../pages/HomePage";
 import Footer from "../hooks/Footer.jsx";
-import ProductView from "../pages/ProductView.jsx";
-import PageEditProduct from "../pages/PageEditProduct.jsx"
+import ProductView from "../pages/ProductViewPage.jsx";
+import PageEditProduct from "../pages/PageEditProduct.jsx";
 
 import {
   BrowserRouter as Router,
