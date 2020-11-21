@@ -8,6 +8,7 @@ const RegisterProductForm = (props) => (
   <div className="container-form-Product">
     <h3> Registrar Producto </h3>
     <Form noValidate validated={props.validated}>
+      
       <Form.Row>
         <Form.Group as={Col} controlId="validationCustomName">
           <Form.Label>Título del producto</Form.Label>
@@ -24,6 +25,7 @@ const RegisterProductForm = (props) => (
         </Form.Group>
       </Form.Row>
 
+      <hr></hr>
       {/*<Form.Row>*/}
       <DropdownButton variant="dark" id="dropdown-item-button" drop={'right'} title="Categoría">
         <Dropdown.ItemText>Elige una categoría</Dropdown.ItemText>

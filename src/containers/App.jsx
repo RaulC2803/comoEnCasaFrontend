@@ -11,6 +11,7 @@ import SalesHistoryPage from "../pages/SalesHistoryPage";
 import HomePage from "../pages/HomePage";
 import Footer from "../hooks/Footer.jsx";
 import ProductView from "../pages/ProductView.jsx";
+import PageEditProduct from "../pages/PageEditProduct.jsx"
 
 import {
   BrowserRouter as Router,
@@ -45,6 +46,7 @@ const App = () => (
       <Route exact path="/historialcompras" component={ShoppingHistoryPage} />
       <Route exact path="/historialVentas" component={SalesHistoryPage} />
       <Route exact path="/productview" component={ProductView} />
+      <Route exact path="/editproduct" component={PageEditProduct} />
       <Route component={NotFound} />
     </Switch>
     {/* Poner una condición que evite que el footer aparezca en las pantallas de registro y login */}
