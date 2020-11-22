@@ -8,7 +8,7 @@ import "./style/NavBar.css";
 const NavBar = (props) => (
   <Navbar bg="dark" variant="dark" fixed="top">
     <Navbar.Brand>
-      <Link to="/" className="landing">
+      <Link to="/home" className="landing">
         <h3>ComoEnCasa</h3>
       </Link>
     </Navbar.Brand>

@@ -46,7 +46,7 @@ const App = () => {
       <Switch>
         <Redirect exact from="/" to="/land" />
         <Route exact path="/land" component={LandingPage} />
-        <Route exact path="/home" component={HomePage} />
+        <Route exact path="/home/:id" component={HomePage} />
         <Route exact path="/comprador" component={RegisterPageCustomer} />
         <Route exact path="/vendedor" component={RegisterPageSeller} />
         <Route exact path="/login" component={Login} />

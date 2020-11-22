@@ -1,6 +1,6 @@
 import callApi from "./Service";
 
-const api = {
+const api_Customer = {
   customer: {
     registerCustomer(data) {
       return callApi("/comprador/register", {
@@ -8,7 +8,10 @@ const api = {
         body: JSON.stringify(data),
       });
     },
+    getCustomer(id) {
+      return callApi(`/comprador/get/${id}`);
+    },
   },
 };
 
-export default api;
+export default api_Customer;

@@ -6,11 +6,11 @@ import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import BathtubIcon from "@material-ui/icons/Bathtub";
 import StarRateTwoToneIcon from "@material-ui/icons/StarRateTwoTone";
 import LocalFloristTwoToneIcon from "@material-ui/icons/LocalFloristTwoTone";
-import RestaurantTwoToneIcon from "@material-ui/icons/RestaurantTwoTone";
+import FreeBreakfastIcon from "@material-ui/icons/FreeBreakfast";
 
 import "./style/CategoriesShorts.css";
 
-const CategoriesShortsForm = () => {
+const CategoriesShortsForm = (props) => {
   const render1 = (props) => (
     <Tooltip id="button-Tooltip" {...props}>
       Comida
@@ -38,7 +38,7 @@ const CategoriesShortsForm = () => {
   );
   const render6 = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      Cocina
+      Bebida
     </Tooltip>
   );
 
@@ -57,8 +57,8 @@ const CategoriesShortsForm = () => {
             delay={{ show: 250, hide: 400 }}
             overlay={render1}
           >
-            <Button>
-              <FastfoodIcon />
+            <Button onClick={props.handleClick} id={"Comida"}>
+              <FastfoodIcon onClick={props.handleClick} id={"Comida"} />
             </Button>
           </OverlayTrigger>
 
@@ -67,8 +67,8 @@ const CategoriesShortsForm = () => {
             delay={{ show: 250, hide: 400 }}
             overlay={render2}
           >
-            <Button>
-              <PanToolIcon />
+            <Button id={"Manualidades"} onClick={props.handleClick}>
+              <PanToolIcon id={"Manualidades"} onClick={props.handleClick} />
             </Button>
           </OverlayTrigger>
           <OverlayTrigger
@@ -76,8 +76,8 @@ const CategoriesShortsForm = () => {
             delay={{ show: 250, hide: 400 }}
             overlay={render3}
           >
-            <Button>
-              <HomeWorkIcon />
+            <Button id={"Decoracion"} onClick={props.handleClick}>
+              <HomeWorkIcon id={"Decoracion"} onClick={props.handleClick} />
             </Button>
           </OverlayTrigger>
           <OverlayTrigger
@@ -85,8 +85,8 @@ const CategoriesShortsForm = () => {
             delay={{ show: 250, hide: 400 }}
             overlay={render4}
           >
-            <Button>
-              <BathtubIcon />
+            <Button id={"CuidadoPersonal"} onClick={props.handleClick}>
+              <BathtubIcon id={"CuidadoPersonal"} onClick={props.handleClick} />
             </Button>
           </OverlayTrigger>
           <OverlayTrigger
@@ -94,8 +94,11 @@ const CategoriesShortsForm = () => {
             delay={{ show: 250, hide: 400 }}
             overlay={render5}
           >
-            <Button>
-              <LocalFloristTwoToneIcon />
+            <Button id={"Jardin"} onClick={props.handleClick}>
+              <LocalFloristTwoToneIcon
+                id={"Jardin"}
+                onClick={props.handleClick}
+              />
             </Button>
           </OverlayTrigger>
           <OverlayTrigger
@@ -103,8 +106,8 @@ const CategoriesShortsForm = () => {
             delay={{ show: 250, hide: 400 }}
             overlay={render6}
           >
-            <Button>
-              <RestaurantTwoToneIcon />
+            <Button id={"Bebida"} onClick={props.handleClick}>
+              <FreeBreakfastIcon id={"Bebida"} onClick={props.handleClick} />
             </Button>
           </OverlayTrigger>
         </div>
