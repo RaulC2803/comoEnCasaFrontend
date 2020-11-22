@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import api from "../../../services/Comprador.js";
 import RegisterCustomerForm from "../Components/RegisterCustomer.jsx";
 import PageLoading from "../../../pages/PageLoading.jsx";
@@ -170,8 +170,9 @@ const RegisterCustomer = () => {
   };
 
   if (state.data) {
-    console.log(state.data);
-    return <Redirect to="/login" />;
+    const id = state.data.idComprador;
+    const url = `/home/${id}`;
+    return <Redirect to={url} />;
   }
   if (state.isLoading === true) {
     return (
@@ -181,22 +182,20 @@ const RegisterCustomer = () => {
     );
   } else {
     return (
-      <div className="container-register">
-        <div className="form-register">
-          <h2>REGISTRARSE COMO COMPRADOR</h2>
-          <RegisterCustomerForm
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            validated={validated}
-            formErrors={formErrors}
-            loadUbigeos={loadUbigeos}
-            handleChangeDepartaments={handleChangeDepartaments}
-            handleChangeProvince={handleChangeProvince}
-            handleChangeDistrit={handleChangeDistrit}
-            optionProvince={optionProvince}
-            optionDistrit={optionDistrit}
-          />
-        </div>
+      <div className="form-register">
+        <h2>REGISTRARSE COMO COMPRADOR</h2>
+        <RegisterCustomerForm
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          validated={validated}
+          formErrors={formErrors}
+          loadUbigeos={loadUbigeos}
+          handleChangeDepartaments={handleChangeDepartaments}
+          handleChangeProvince={handleChangeProvince}
+          handleChangeDistrit={handleChangeDistrit}
+          optionProvince={optionProvince}
+          optionDistrit={optionDistrit}
+        />
       </div>
     );
   }

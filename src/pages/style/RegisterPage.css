@@ -1,2 +1,9 @@
-.container-page-RegisterPage {
+.container-page-register {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #85d0fc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+

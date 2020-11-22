@@ -1,13 +1,3 @@
-.container-register {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #85d0fc;
-}
-
 .form-register {
   width: 60%;
   display: flex;

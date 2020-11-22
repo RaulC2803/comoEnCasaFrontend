@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBarForm from "../Components/SearchHome.jsx";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   return <SearchBarForm />;
 };
 export default SearchBar;

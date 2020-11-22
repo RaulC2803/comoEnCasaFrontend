@@ -18,4 +18,15 @@
   margin: 0;
   padding: 0 0 5px 0;
   font-size: 24px;
+  font-weight: bold;
+}
+
+.store-details-description-movil {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.store-details-description-email {
+  font-weight: bold;
+  font-size: 18px;
 }

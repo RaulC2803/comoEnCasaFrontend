@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBarContainer from "../hooks/App/NavBar/Containers/NavBarContainer.jsx";
 import LandingPage from "../pages/LandingPage.jsx";
 import RegisterPageCustomer from "../pages/RegisterPageCustomer.jsx";
@@ -29,29 +29,41 @@ const NotFound = () => (
   </div>
 );
 
-const App = () => (
-  <Router>
-    <nav>
-      <NavBarContainer />
-    </nav>
-    <Switch>
-      <Redirect exact from="/" to="/land" />
-      <Route exact path="/land" component={LandingPage} />
-      <Route exact path="/home" component={HomePage} />
-      <Route exact path="/comprador" component={RegisterPageCustomer} />
-      <Route exact path="/vendedor" component={RegisterPageSeller} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/registrarProducto" component={RegisterPageProduct} />
-      <Route exact path="/myProducts" component={PageMyProducts} />
-      <Route exact path="/historialcompras" component={ShoppingHistoryPage} />
-      <Route exact path="/historialVentas" component={SalesHistoryPage} />
-      <Route exact path="/productview" component={ProductView} />
-      <Route exact path="/editproduct" component={PageEditProduct} />
-      <Route component={NotFound} />
-    </Switch>
-    {/* Poner una condición que evite que el footer aparezca en las pantallas de registro y login */}
-    <Footer />
-  </Router>
-);
+const App = () => {
+  const [userName, setUserName] = useState("");
+  const handleChangeUser = (name) => {
+    setUserName(name);
+  };
+  return (
+    <Router>
+      <nav>
+        <NavBarContainer
+          useName={userName}
+          handleChangeUser={handleChangeUser}
+        />
+      </nav>
+      <Switch>
+        <Redirect exact from="/" to="/land" />
+        <Route exact path="/land" component={LandingPage} />
+        <Route exact path="/home" component={HomePage} />
+        <Route exact path="/comprador" component={RegisterPageCustomer} />
+        <Route exact path="/vendedor" component={RegisterPageSeller} />
+        <Route exact path="/login" component={Login} />
+        <Route
+          exact
+          path="/registrarProducto"
+          component={RegisterPageProduct}
+        />
+        <Route exact path="/myProducts" component={PageMyProducts} />
+        <Route exact path="/historialcompras" component={ShoppingHistoryPage} />
+        <Route exact path="/historialVentas" component={SalesHistoryPage} />
+        <Route exact path="/productview/:id" component={ProductView} />
+        <Route exact path="/editproduct" component={PageEditProduct} />
+        <Route component={NotFound} />
+      </Switch>
+      <Footer />
+    </Router>
+  );
+};
 
 export default App;
