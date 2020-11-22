@@ -1,10 +1,10 @@
 import React from "react";
-import ProductForm from "./Product.jsx";
+import ProductForm from "../Components/Product.jsx";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 
 import "./style/ProductList.css";
 
-const ProductListForm = () => (
+const ProductListForm = (props) => (
   <div className="container-productlist">
     <div>
       <Container fluid>
@@ -14,11 +14,7 @@ const ProductListForm = () => (
           </Col>
         </Row>
         <Row md={3} lg={3}>
-          <ProductForm />
-          <ProductForm />
-          <ProductForm />
-          <ProductForm />
-          <ProductForm />
+          {props.items}
         </Row>
       </Container>
     </div>

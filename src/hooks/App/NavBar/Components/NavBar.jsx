@@ -19,9 +19,14 @@ const NavBar = (props) => (
         <Button variant="outline-light">Login</Button>
       </Link>
     )) || (
-      <Link to="/historialcompras">
-        <Button variant="outline-light">My History</Button>
-      </Link>
+      <div>
+        <Link to="/">
+          <Button variant="outline-light">{props.userName}</Button>
+        </Link>
+        <Link to="/historialcompras">
+          <Button variant="outline-light">My History</Button>
+        </Link>
+      </div>
     )}
   </Navbar>
 );

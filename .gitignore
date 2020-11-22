@@ -1,1 +1,5 @@
 node_modules/
+.dockerignore
+.webpack.config.js
+.webpack.dll.config.js
+.package-lock.json

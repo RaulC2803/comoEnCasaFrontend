@@ -1,27 +1,28 @@
 import React from "react";
 import { Row, Col, Image, Button, ProgressBar } from "react-bootstrap";
-import test from "../../../assets/images/DiversidadAsegurada.png";
 
 import "./style/TopRight.css";
 
-const TopRightForm = () => (
+const TopRightForm = (props) => (
   <Col>
     <Row className="container-parts">
       <Col>
         <div className="image-productview">
-          <Image src={test} />
+          <Image src={props.images} />
         </div>
       </Col>
       <Col>
         <div className="product-data">
-          <p className="store-title">Don Pepe</p>
-          <p className="store-address">Av. Por ahí 554</p>
+          <p className="store-title">{props.name}</p>
+          <p className="store-address">{props.address}</p>
           <div className="store-details">
             <p className="store-details-title">Descripción</p>
-            <p className="store-details-description">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
-              et recusandae quibusdam earum voluptatibus doloribus. Hola señores
-            </p>
+            <div className="store-details-description">
+              <p className="store-details-description-movil">Móvil</p>
+              <p>{props.n_mobile}</p>
+              <p className="store-details-description-email">Email</p>
+              <p>{props.email}</p>
+            </div>
           </div>
         </div>
       </Col>

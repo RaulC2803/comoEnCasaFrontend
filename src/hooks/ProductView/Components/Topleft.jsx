@@ -5,7 +5,7 @@ import LocalGroceryStoreIcon from "@material-ui/icons/LocalGroceryStore";
 
 import "./style/TopLeft.css";
 
-const TopleftForm = () => (
+const TopleftForm = (props) => (
   <Col>
     <Row className="container-parts">
       <Col>
@@ -15,17 +15,14 @@ const TopleftForm = () => (
       </Col>
       <Col>
         <div className="product-data">
-          <p className="product-title">Lomito Saltado</p>
-          <p className="product-store">Pepito Store</p>
+          <p className="product-title">{props.name}</p>
+          <p className="product-store">{props.nameSeller}</p>
           <p className="product-price">
-            S/. 5.00 <LocalGroceryStoreIcon fontSize="large" />
+            S/. {props.price} <LocalGroceryStoreIcon fontSize="large" />
           </p>
           <div className="product-details">
             <p className="product-details-title">Descripción</p>
-            <p className="product-details-description">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
-              et recusandae quibusdam earum voluptatibus doloribus. Hola señores
-            </p>
+            <p className="product-details-description">{props.description}</p>
           </div>
         </div>
       </Col>

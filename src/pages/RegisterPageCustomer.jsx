@@ -4,7 +4,7 @@ import RegisterCustomer from "../hooks/RegisterUser/Container/RegisterCustomer.j
 import "./style/RegisterPage.css";
 
 const RegisterPageCustomer = () => (
-  <div className="container-page">
+  <div className="container-page-register">
     <RegisterCustomer />
   </div>
 );
