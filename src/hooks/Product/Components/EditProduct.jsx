@@ -14,7 +14,7 @@ const EditProductForm = (props) => (
                         <Form.Control
                             name="name"
                             type="text"
-                            placeholder="Ingresa un nuevo nombre a tu producto."
+                            placeholder={props.product.name}
                         />
                     </Form.Group>
                 </Form.Row>
@@ -39,7 +39,7 @@ const EditProductForm = (props) => (
                         <Form.Control
                             name="price"
                             type="text"
-                            placeholder="Ingresa un nuevo precio."
+                            placeholder={props.product.price}
                         />
                     </Form.Group>
                 </Form.Row>

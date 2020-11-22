@@ -1,0 +1,30 @@
+.product-data {
+  padding: 25px;
+}
+
+.product-title {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.product-store {
+  margin: 0;
+  padding: 0;
+}
+
+.product-price {
+  padding: 10px 0 0 0;
+  font-size: 34px;
+}
+
+.product-details p {
+  text-align: justify;
+}
+
+.product-details-title {
+  margin: 0;
+  padding: 0 0 5px 0;
+  font-size: 24px;
+}

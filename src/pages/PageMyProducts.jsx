@@ -1,13 +1,17 @@
 import React from "react";
-// Importar componentes
+import MyProducts from "../hooks/Product/Container/MyProducts.jsx";
+import { useParams } from "react-router-dom";
+import "./style/HomePage.css"
 
-import MyProducts from "../hooks/Product/Components/MyProducts.jsx";
-
-// Importar hoja de estilo
 
 const PageMyProducts = () => (
-  <div className="container-page">
-    <MyProducts />
+  
+  //const idComprador = useParams();
+
+  <div className="container-home">
+    <div className="container-main">
+      <MyProducts />
+    </div>
   </div>
 );
 

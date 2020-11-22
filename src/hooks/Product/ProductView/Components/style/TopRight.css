@@ -1,0 +1,32 @@
+.store-title {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.store-address {
+  margin: 0px 0px 10px 0px;
+  padding: 0;
+}
+
+.store-details p {
+  text-align: justify;
+}
+
+.store-details-title {
+  margin: 0;
+  padding: 0 0 5px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.store-details-description-movil {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.store-details-description-email {
+  font-weight: bold;
+  font-size: 18px;
+}

@@ -8,6 +8,9 @@ const api = {
     getProduct(id) {
       return callApi(`/producto/obtener/${id}`);
     },
+    getProductListBySeller(id) {
+      return callApi(`/producto/obtener/vendedor/${id}`);
+    },
     searchProductByName(name) {
       return callApi(`/producto/buscar/${name}`);
     },

@@ -5,36 +5,30 @@ import BasicTable from "../../BasicTable";
 //estilos
 import "./style/MyProducts.css";
 
-const MyProducts = () => (
-  <div className="container-myproducts">
-    <div className="form-myproducts">
-      <h2>Mis Productos</h2>
-      <SearchBar />
-      <div className="container-table">
-        <Container fluid>
-          <Row>
-            <Col sm>Producto</Col>
-            <Col sm>Precio</Col>
-            <Col sm>Descripcion</Col>
-            <Col sm>Sección</Col>
-            <Col sm>Stock</Col>
-          </Row>
+const MyProductsList = (props) => (
 
-          {/*Aqui va Componente FILA con la data de los productos de un vendedor*/}
-        </Container>
-      </div>
+  <div className="container-productlist">
+    <h2>Mis Productos</h2>
+    <Container fluid>
+      <Row>
+        <Row md={3} lg={3}>
+          {props.items}
+        </Row>
+      </Row>
 
       <div className="container-button">
-        <Button variant="dark" type="submit">
-          Agregar nuevo producto
+      <Button variant="dark" type="submit">
+        Agregar
         </Button>
-        <Button variant="dark" type="submit">
-          Guardar
+      <Button variant="dark" type="submit">
+        Eliminar
         </Button>
       </div>
-    </div>
+    </Container>
+
+    
   </div>
 );
 
-export default MyProducts;
+export default MyProductsList;
 

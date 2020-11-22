@@ -1,0 +1,28 @@
+.container-review-title {
+  padding-top: 25px;
+  height: 100%;
+}
+
+.review-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.number-review p {
+  font-size: 32px;
+}
+
+.product-calification-button {
+  margin-bottom: 10px;
+}
+
+.start-accumulate {
+  margin: 0 0;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.title-calification {
+  padding-top: 2px;
+  padding-bottom: 0px;
+}
