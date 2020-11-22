@@ -12,6 +12,7 @@ import HomePage from "../pages/HomePage";
 import Footer from "../hooks/Footer.jsx";
 import ProductView from "../pages/ProductViewPage.jsx";
 import PageEditProduct from "../pages/PageEditProduct.jsx";
+import ProductViewAsSeller from "../pages/ProductViewPageAsSeller.jsx";
 
 import {
   BrowserRouter as Router,
@@ -58,7 +59,8 @@ const App = () => {
         <Route exact path="/historialcompras" component={ShoppingHistoryPage} />
         <Route exact path="/historialVentas" component={SalesHistoryPage} />
         <Route exact path="/productview/:id" component={ProductView} />
-        <Route exact path="/editproduct" component={PageEditProduct} />
+        <Route exact path="/editproduct/:id" component={PageEditProduct} />
+        <Route exact path="/productviewSeller/:id" component={ProductViewAsSeller} />
         <Route component={NotFound} />
       </Switch>
       <Footer />
