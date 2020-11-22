@@ -8,6 +8,15 @@ const api = {
     getProduct(id) {
       return callApi(`/producto/obtener/${id}`);
     },
+    searchProductByName(name) {
+      return callApi(`/producto/buscar/${name}`);
+    },
+    searchProductByCategorie(name) {
+      return callApi(`/producto/categoria/${name}`);
+    },
+    getReview(id) {
+      return callApi(`/producto/resena/listar/${id}`);
+    },
   },
 };
 

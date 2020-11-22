@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, useParams } from "react-router-dom";
-import api from "../../../services/Comprador.js";
+import api_Customer from "../../../services/Comprador.js";
 import RegisterCustomerForm from "../Components/RegisterCustomer.jsx";
 import PageLoading from "../../../pages/PageLoading.jsx";
 import ubigeo from "../../../services/ubigeo.js";
@@ -149,7 +149,7 @@ const RegisterCustomer = () => {
     if (validated) {
       setState({ ...state, isLoading: true, error: null });
       try {
-        const res = await api.customer.registerCustomer({
+        const res = await api_Customer.customer.registerCustomer({
           ...customer,
           address:
             customer.address +

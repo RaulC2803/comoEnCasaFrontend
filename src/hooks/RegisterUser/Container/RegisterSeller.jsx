@@ -93,7 +93,9 @@ const RegisterSeller = () => {
   };
 
   if (state.data) {
-    return <Redirect to="/login" />;
+    const id = state.data.idComprador;
+    const url = `/home/${id}`;
+    return <Redirect to={url} />;
   }
   if (state.isLoading === true) {
     return (
@@ -103,7 +105,7 @@ const RegisterSeller = () => {
     );
   } else {
     return (
-      <div className="container-register">
+      <div className="container-page-register">
         <div className="form-register">
           <h2>REGISTRARSE COMO VENDEDOR</h2>
           <RegisterSellerForm
