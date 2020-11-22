@@ -19,8 +19,12 @@ const ProductView = () => {
 
   const [state, setState] = useState(initialState);
   const { id } = useParams();
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
+    api.product.getReview(id).then((items) => {
+      setReviews(items);
+    });
     api.product.getProduct(id).then((items) => {
       setState({ ...state, isLoading: false, data: items });
     });
@@ -39,7 +43,7 @@ const ProductView = () => {
             </Row>
             <Row>
               <BottomLeft />
-              <BottomRight />
+              <BottomRight reviews={reviews} />
             </Row>
           </div>
         </div>

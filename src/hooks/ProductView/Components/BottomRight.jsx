@@ -1,10 +1,9 @@
 import React from "react";
 import { Row, Col, Image, Button, ProgressBar, Form } from "react-bootstrap";
-import Resena from "./Resena.jsx";
 
 import "./style/BottomRight.css";
 
-const BottomRight = () => (
+const BottomRight = (props) => (
   <Col>
     <Row className="container-parts">
       <Col>
@@ -14,13 +13,7 @@ const BottomRight = () => (
           </div>
         </Row>
         <Row>
-          <div className="container-review">
-            <Resena />
-            <Resena />
-            <Resena />
-            <Resena />
-            <Resena />
-          </div>
+          <div className="container-review">{props.items}</div>
         </Row>
       </Col>
     </Row>
