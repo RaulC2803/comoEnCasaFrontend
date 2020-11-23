@@ -3,6 +3,7 @@ import SearchBarForm from "../Components/SearchHome.jsx";
 import api from "../../../services/Producto.js";
 
 const SearchBar = (props) => {
+  const url = `/historialcompras/${props.id}`;
   const handleSubmit = (e) => {
     if (e.charCode === 13) {
       e.preventDefault();
@@ -13,6 +14,8 @@ const SearchBar = (props) => {
       }
     }
   };
-  return <SearchBarForm handleSubmit={handleSubmit} email={props.email} />;
+  return (
+    <SearchBarForm url={url} handleSubmit={handleSubmit} email={props.email} />
+  );
 };
 export default SearchBar;

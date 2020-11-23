@@ -24,27 +24,19 @@ const HomePage = () => {
 
   const [list, setList] = useState([]);
 
-  const loadProductList = () => {
-    api.product.getProductList().then((items) => {
-      setList(items);
-      setState({ ...state, isLoading: false, data: items });
-    });
-  };
-
-  const getCustomer = () => {
-    api_Customer.customer.getCustomer(id).then((items) => {
-      setUser(items);
-    });
-  };
-
   const cacheProductList = () => {
     setState({ ...state, isLoading: false, data: list });
   };
 
   useEffect(() => {
     setState({ ...state, isLoading: true, error: null });
-    getCustomer();
-    loadProductList();
+    api_Customer.customer.getCustomer(id).then((items) => {
+      setUser(items);
+    });
+    api.product.getProductList().then((items) => {
+      setList(items);
+      setState({ ...state, isLoading: false, data: items });
+    });
   }, []);
 
   const handleSearchProduct = (name) => {
@@ -72,12 +64,13 @@ const HomePage = () => {
               handleSearchProduct={handleSearchProduct}
               cacheProductList={cacheProductList}
               email={user.email}
+              id={id}
             />
             <CategoriesShorts
               handleSearchProductbyCategorie={handleSearchProductbyCategorie}
               cacheProductList={cacheProductList}
             />
-            <ProductList data={state.data} />
+            <ProductList data={state.data} idc={id} />
           </div>
         </div>
       );
