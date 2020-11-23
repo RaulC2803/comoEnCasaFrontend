@@ -183,7 +183,7 @@ const RegisterCustomer = () => {
   } else {
     return (
       <div className="form-register">
-        <h2>REGISTRARSE COMO VENDEDOR</h2>
+        <h2>REGISTRARSE COMO COMPRADOR</h2>
         <RegisterCustomerForm
           handleSubmit={handleSubmit}
           handleChange={handleChange}
