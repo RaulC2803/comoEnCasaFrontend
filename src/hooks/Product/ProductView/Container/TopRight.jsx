@@ -2,7 +2,7 @@ import React from "react";
 import TopRightForm from "../Components/TopRight.jsx";
 
 const TopRight = (props) => {
-  const seller = props.product.vendedor;
+  const seller = props.product.nameVendedor;
   return (
     <TopRightForm
       name={seller.name}
