@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { Redirect, useParams } from "react-router-dom";
+import api_Seller from "../../../services/Vendedor.js";
 import "../Components/style/RegisterProduct.css";
 import RegisterProductForm from "../Components/RegisterProduct.jsx";
-
-const API = "https://comoencasa-289703.rj.r.appspot.com/producto/registrar{id}";
+import PageLoading from "../../../pages/PageLoading.jsx";
 
 const RegisterProduct = () => {
   const initialState = {
-    isLoaded: false,
+    isLoading: false,
     error: null,
     data: null,
   };
+
   const [state, setState] = useState(initialState);
+
   const [product, setProduct] = useState({
     name: "",
+    categoria: "comida",
     price: "",
     description: "",
-    images: "",
+    images: "sdasdfdergr4g4",
     tags: "",
     stock: ""
   });
 
   const formErrors = {
     name: "Ingrese un nombre de producto válido",
+    categoria: "Por favor Ingresa una categoría",
     price: "Ingrese un precio válido",
     description: "ingrese una descripcion válida",
     images: "ingrese un formato de imagen válido",
@@ -39,6 +43,9 @@ const RegisterProduct = () => {
     switch (name) {
       case "name":
         setProduct({ ...product, name: value });
+        break;
+      case "category":
+        setProduct({ ...product, categoria: value });
         break;
       case "price":
         setProduct({ ...product, price: value });
@@ -68,22 +75,25 @@ const RegisterProduct = () => {
     }
   };
 
-  const handleSubmit = () => {
-    axios
-      .post(API, product)
-      .then((res) => {
-        setState({ ...state, isLoaded: true, data: res.data });
-        console.log(state);
-      })
-      .catch((error) => {
-        setState({ ...state, isLoaded: true, error: error });
-        console.log(state.error);
-      });
+  const id = 22
+  const handleSubmit = async (event) => {
+    console.log(product)
+    setState({ ...state, isLoading: true, error: null });
+    try {
+      console.log("handlesubmit")
+      const res = await api_Seller.seller.registerProduct(product, id);
+      setState({ ...state, isLoading: false, data: res });
+    } catch (error) {
+      setState({ ...state, isLoading: false, error: error });
+      console.log(state.error)
+    }
   };
 
   if (state.data) {
-    console.log("1")
-    return <Redirect to="/registrarProducto" />;
+    console.log("asdasd")
+    const id = state.data.idVendedor;
+    const url = `/myProducts`;
+    return <Redirect to={url} />;
   }
   if (state.isLoading === true) {
     console.log("2")
@@ -95,12 +105,12 @@ const RegisterProduct = () => {
   } else {
     console.log("3")
     return (
-          <RegisterProductForm
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            validated={validated}
-            formErrors={formErrors}
-          />
+      <RegisterProductForm
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+        validated={validated}
+        formErrors={formErrors}
+      />
     );
   }
 };

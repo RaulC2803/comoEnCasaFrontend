@@ -8,6 +8,12 @@ const api = {
         body: JSON.stringify(data),
       });
     },
+    registerProduct(data, id) {
+      return callApi(`/vendedor/producto/registrar/${id}`, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+    },
   },
 };
 

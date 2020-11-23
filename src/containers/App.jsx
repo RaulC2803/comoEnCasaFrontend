@@ -55,12 +55,14 @@ const App = () => {
           path="/registrarProducto"
           component={RegisterPageProduct}
         />
-        <Route exact path="/myProducts" component={PageMyProducts} />
         <Route exact path="/historialcompras" component={ShoppingHistoryPage} />
-        <Route exact path="/historialVentas" component={SalesHistoryPage} />
         <Route exact path="/productview/:id" component={ProductView} />
+
+        <Route exact path="/myProducts" component={PageMyProducts} />
+        <Route exact path="/historialVentas" component={SalesHistoryPage} />
         <Route exact path="/editproduct/:id" component={PageEditProduct} />
         <Route exact path="/productviewSeller/:id" component={ProductViewAsSeller} />
+        
         <Route component={NotFound} />
       </Switch>
       <Footer />

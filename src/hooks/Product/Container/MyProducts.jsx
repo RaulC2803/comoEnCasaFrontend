@@ -14,7 +14,7 @@ const MyProducts = () => {
 
     const [state, setState] = useState(initialState);
 
-    const UserTest = 1
+    const UserTest = 22
 
     useEffect(() => {
         api.product.getProductListBySeller(UserTest).then((items) => {
