@@ -20,6 +20,9 @@ const api = {
     getReview(id) {
       return callApi(`/producto/resena/listar/${id}`);
     },
+    getCantStars(id) {
+      return callApi(`/producto/stars/${id}`);
+    },
   },
 };
 

@@ -26,3 +26,11 @@
   width: 100%;
   border: 1px solid black;
 }
+
+.button-history {
+  padding-left: 10px;
+}
+
+.button-history svg {
+  color: black;
+}

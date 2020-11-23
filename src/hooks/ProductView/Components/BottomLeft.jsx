@@ -1,10 +1,10 @@
 import React from "react";
-import { Row, Col, Image, Button, ProgressBar } from "react-bootstrap";
+import { Form, Row, Col, Image, Button, ProgressBar } from "react-bootstrap";
 import StarIcon from "@material-ui/icons/Star";
 
 import "./style/BottomLeft.css";
 
-const BottomLeftForm = () => (
+const BottomLeftForm = (props) => (
   <Col>
     <Row className="container-parts">
       <Col>
@@ -18,7 +18,7 @@ const BottomLeftForm = () => (
                 <p className="title-calification">
                   <StarIcon /> Calificación de 1
                 </p>
-                <ProgressBar animated variant="warning" now={20} />
+                <ProgressBar animated variant="warning" now={props.star1} />
               </div>
             </Row>
             <Row>
@@ -26,7 +26,7 @@ const BottomLeftForm = () => (
                 <p className="title-calification">
                   <StarIcon /> Calificación de 2
                 </p>
-                <ProgressBar animated variant="warning" now={50} />
+                <ProgressBar animated variant="warning" now={props.star2} />
               </div>
             </Row>
             <Row>
@@ -34,7 +34,7 @@ const BottomLeftForm = () => (
                 <p className="title-calification">
                   <StarIcon /> Calificación de 3
                 </p>
-                <ProgressBar animated variant="warning" now={70} />
+                <ProgressBar animated variant="warning" now={props.star3} />
               </div>
             </Row>
             <Row>
@@ -42,7 +42,7 @@ const BottomLeftForm = () => (
                 <p className="title-calification">
                   <StarIcon /> Calificación de 4
                 </p>
-                <ProgressBar animated variant="warning" now={30} />
+                <ProgressBar animated variant="warning" now={props.star4} />
               </div>
             </Row>
             <Row>
@@ -50,7 +50,7 @@ const BottomLeftForm = () => (
                 <p className="title-calification">
                   <StarIcon /> Calificación de 5
                 </p>
-                <ProgressBar animated variant="warning" now={80} />
+                <ProgressBar animated variant="warning" now={props.star5} />
               </div>
             </Row>
           </div>
@@ -61,8 +61,20 @@ const BottomLeftForm = () => (
           <p className="review-title">Calificación</p>
           <div className="number-review">
             <p>
-              <StarIcon fontSize="large" /> 4.3
+              <StarIcon fontSize="large" />
+              {props.average}
             </p>
+          </div>
+          <div className="button-buy">
+            <Form>
+              <Form.Group controlId="buy">
+                <Form.Label>Añadir a la canasta</Form.Label>
+                <Form.Control type="number" onChange={props.handleOnChange} />
+              </Form.Group>
+            </Form>
+            <Button onClick={props.handleSubmit} variant="dark">
+              Añadir a la canasta
+            </Button>
           </div>
         </div>
       </Col>

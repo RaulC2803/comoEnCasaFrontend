@@ -11,7 +11,7 @@ import {
 
 import "./style/ShoppingHistory.css";
 
-const ShoppingHistory = () => (
+const ShoppingHistoryForm = (props) => (
   <div className="form-shoppingHistory">
     <div className="title-shoppingHistory">
       <h2>Historial de Compras</h2>
@@ -20,49 +20,31 @@ const ShoppingHistory = () => (
       <Container fluid>
         <Row>
           <Col sm>
-            <strong>Compras Finalizadas</strong>
+            <strong>Fecha</strong>
           </Col>
           <Col sm>
-            <strong>Datos de Envío</strong>
+            <strong>Nombre del Producto</strong>
           </Col>
           <Col sm>
-            <strong>Datos Proveedor</strong>
+            <strong>Nombre del Vendedor</strong>
           </Col>
           <Col sm>
-            <strong>Datos de Pago</strong>
+            <strong>Sub Total</strong>
           </Col>
           <Col sm>
-            <strong>Código Pedido</strong>
+            <strong>Total</strong>
           </Col>
           <Col sm>
-            <strong>Estado</strong>
+            <strong>Cantidad</strong>
           </Col>
         </Row>
         <div className="divider" />
         <Row className="rows-history">
-          <Col sm>
-            <p>Compras Finalizadas</p>
-          </Col>
-          <Col sm>
-            <p>Datos de Envío</p>
-          </Col>
-          <Col sm>
-            <p>Datos Proveedor</p>
-          </Col>
-          <Col sm>
-            <p>Datos de Pago</p>
-          </Col>
-          <Col sm>
-            <p>Código Pedido</p>
-          </Col>
-          <Col sm>
-            <p>Estado</p>
-          </Col>
+          <Col>{props.items}</Col>
         </Row>
-        {/*Aqui va Componente FILA con la data de las compras hechas por un cliente*/}
       </Container>
     </div>
   </div>
 );
 
-export default ShoppingHistory;
+export default ShoppingHistoryForm;
