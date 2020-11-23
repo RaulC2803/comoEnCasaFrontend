@@ -8,7 +8,7 @@ import "./style/Product.css";
 
 const ProductForm = (props) => {
   const id = props.product.idProducto;
-  const url = `/productView/${id}`;
+  const url = `/productview/${props.idc}/${id}`;
   return (
     <Col lg="auto" className="col-item">
       <Link to={url}>
@@ -16,7 +16,7 @@ const ProductForm = (props) => {
           <Image src={test} />
           <div className="details">
             <strong className="title">{props.product.name}</strong>
-            <p className="store">{props.product.vendedor.name}</p>
+            <p className="store">{props.product.nameVendedor}</p>
             <p className="price">$ {props.product.price}</p>
           </div>
         </div>

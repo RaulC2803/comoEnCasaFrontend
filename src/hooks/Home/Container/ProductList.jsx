@@ -4,13 +4,13 @@ import ProductListForm from "../Components/ProductList.jsx";
 
 const ProductList = (props) => {
   const items = [];
-  for (const [index, product] of props.data.entries()) {
+  props.data.forEach(function (product, index) {
     items.push(
       <ul key={index} style={{ listStyle: "none" }}>
-        <ProductForm product={product} />
+        <ProductForm product={product} idc={props.idc} />
       </ul>
     );
-  }
+  });
   return <ProductListForm items={items} />;
 };
 

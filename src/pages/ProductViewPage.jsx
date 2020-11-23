@@ -19,13 +19,18 @@ const ProductView = () => {
 
   const [state, setState] = useState(initialState);
   const { id } = useParams();
+  const { idp } = useParams();
   const [reviews, setReviews] = useState([]);
+  const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    api.product.getReview(id).then((items) => {
+    api.product.getReview(idp).then((items) => {
       setReviews(items);
     });
-    api.product.getProduct(id).then((items) => {
+    api.product.getCantStars(idp).then((items) => {
+      setStars(items);
+    });
+    api.product.getProduct(idp).then((items) => {
       setState({ ...state, isLoading: false, data: items });
     });
   }, []);
@@ -42,7 +47,7 @@ const ProductView = () => {
               <TopRight product={state.data} />
             </Row>
             <Row>
-              <BottomLeft />
+              <BottomLeft stars={stars} product={state.data} idc={id} />
               <BottomRight reviews={reviews} />
             </Row>
           </div>

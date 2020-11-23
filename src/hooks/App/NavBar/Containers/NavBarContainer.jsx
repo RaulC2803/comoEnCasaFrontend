@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import NavBar from "../Components/NavBar.jsx";
+import NavBarLogged from "../Components/NavBarLogged.jsx";
+import NavBarNoLogged from "../Components/NavBarNoLogged.jsx";
 import { useLocation } from "react-router-dom";
 
 const NavBarContainer = (props) => {
@@ -16,7 +17,11 @@ const NavBarContainer = (props) => {
       return false;
     }
   };
-  return <NavBar isLogged={isLogged()} userName={props.userName} />;
+  if (isLogged()) {
+    return <NavBarLogged userName={props.userName} />;
+  } else {
+    return <NavBarNoLogged />;
+  }
 };
 
 export default NavBarContainer;
