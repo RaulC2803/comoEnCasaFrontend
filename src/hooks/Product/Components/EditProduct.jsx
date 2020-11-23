@@ -50,6 +50,7 @@ const EditProductForm = (props) => (
                         <Form.Control
                             name="stock"
                             type="number"
+                            placeholder={props.product.stock}
                             min="0"
                         />
                     </Form.Group>
@@ -62,7 +63,7 @@ const EditProductForm = (props) => (
                             name="description"
                             as="textarea"
                             rows={3}
-                            placeholder="Edita la descripción del producto. "
+                            placeholder={props.product.description}
                         />
                     </Form.Group>
                 </Form.Row>

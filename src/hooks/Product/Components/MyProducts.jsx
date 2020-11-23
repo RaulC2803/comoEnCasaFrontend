@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import { Form, Button, Container, Col, Row } from "react-bootstrap";
 import SearchBar from "../../SearchBar";
 import BasicTable from "../../BasicTable";
@@ -17,9 +18,11 @@ const MyProductsList = (props) => (
       </Row>
 
       <div className="container-button">
+        <Link to={`/registrarProducto`}>
       <Button variant="dark" type="submit">
         Agregar
         </Button>
+        </Link>
       <Button variant="dark" type="submit">
         Eliminar
         </Button>

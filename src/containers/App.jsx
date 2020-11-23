@@ -61,7 +61,6 @@ const App = () => {
           path="/historialcompras/:id"
           component={ShoppingHistoryPage}
         />
-        <Route exact path="/historialVentas" component={SalesHistoryPage} />
         <Route exact path="/productview/:id/:idp" component={ProductView} />
         <Route exact path="/editproduct/:id" component={PageEditProduct} />
         <Route
@@ -69,6 +68,7 @@ const App = () => {
           path="/productviewSeller/:id"
           component={ProductViewAsSeller}
         />
+        <Route exact path="/historialVentas" component={SalesHistoryPage} />
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />
