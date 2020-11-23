@@ -16,7 +16,7 @@ const Register = () => {
           productos con los demás, para que vean tu talento y calidad. Todos
           ganamos!
         </p>
-        <Link to="/vendedor">
+        <Link to="/comprador">
           <Button variant="dark" className="button-register">
             ÚNETE <SendIcon />
           </Button>
