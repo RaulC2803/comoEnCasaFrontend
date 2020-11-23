@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"
 import { Form, Button, Dropdown, Col, Row, DropdownButton } from "react-bootstrap";
 import "./style/EditProduct.css"
 
@@ -15,6 +16,7 @@ const EditProductForm = (props) => (
                             name="name"
                             type="text"
                             placeholder={props.product.name}
+                            onChange={props.handleChange}
                         />
                     </Form.Group>
                 </Form.Row>
@@ -27,7 +29,7 @@ const EditProductForm = (props) => (
                     {/*DUMMY* - implementar for loop*/}
                     <Dropdown.Item as="button">Comida</Dropdown.Item>
                     <Dropdown.Item as="button">Artesanía</Dropdown.Item>
-                    <Dropdown.Item as="button">Dices</Dropdown.Item>
+                    <Dropdown.Item as="button">Jardin</Dropdown.Item>
 
                 </DropdownButton>
                 {/*</Form.Row>*/}
@@ -40,6 +42,7 @@ const EditProductForm = (props) => (
                             name="price"
                             type="text"
                             placeholder={props.product.price}
+                            onChange={props.handleChange}
                         />
                     </Form.Group>
                 </Form.Row>
@@ -52,6 +55,7 @@ const EditProductForm = (props) => (
                             type="number"
                             placeholder={props.product.stock}
                             min="0"
+                            onChange={props.handleChange}
                         />
                     </Form.Group>
                 </Form.Row>
@@ -64,6 +68,7 @@ const EditProductForm = (props) => (
                             as="textarea"
                             rows={3}
                             placeholder={props.product.description}
+                            onChange={props.handleChange}
                         />
                     </Form.Group>
                 </Form.Row>
@@ -76,17 +81,28 @@ const EditProductForm = (props) => (
                             id="custom-file"
                             label="Sube una imagen de tu producto"
                             custom
+                            onChange={props.handleChange}
                         />
                     </Form.Group>
                 </Form.Row>
 
                 <Form.Row>
-                    <Button variant="dark" type="submit" onClick={props.handleSubmitLog}>
-                        Guardar cambios
+
+                    <Link to={"/myProducts"}>
+                        <Button variant="dark" onClick={props.handleSubmit}>
+                            Guardar cambios
                 </Button>
-                    <Button variant="dark" type="submit">
-                        Cancelar
+                    </Link>
+
+                    <Button variant="dark" onClick={props.deleteProduct}>
+                        Eliminar
+                     </Button>
+
+                    <Link to={"/myProducts"}>
+                        <Button variant="dark" >
+                            Cancelar
                 </Button>
+                    </Link>
                 </Form.Row>
 
             </Form>

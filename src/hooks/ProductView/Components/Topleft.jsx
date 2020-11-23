@@ -10,7 +10,7 @@ const TopleftForm = (props) => (
     <Row className="container-parts">
       <Col>
         <div className="image-productview">
-          <Image src={test} />
+          <Image src={"https://cdn.discordapp.com/attachments/744977588107214918/780351823046639616/inca-kola-gaseosas-normal-x-500-ml.png"} />
         </div>
       </Col>
       <Col>

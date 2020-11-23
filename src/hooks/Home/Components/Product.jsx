@@ -13,7 +13,7 @@ const ProductForm = (props) => {
     <Col lg="auto" className="col-item">
       <Link to={url}>
         <div className="product-item">
-          <Image src="https://media.discordapp.net/attachments/744977588107214918/780276299481743360/IMG-20200620-WA0004.jpg?width=658&height=480" />
+          <Image src="https://cdn.discordapp.com/attachments/744977588107214918/780351823046639616/inca-kola-gaseosas-normal-x-500-ml.png" />
           <div className="details">
             <strong className="title">{props.product.name}</strong>
             <p className="store">{props.product.nameVendedor}</p>

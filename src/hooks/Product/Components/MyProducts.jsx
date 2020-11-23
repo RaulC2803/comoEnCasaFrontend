@@ -23,9 +23,7 @@ const MyProductsList = (props) => (
         Agregar
         </Button>
         </Link>
-      <Button variant="dark" type="submit">
-        Eliminar
-        </Button>
+     
       </div>
     </Container>
 

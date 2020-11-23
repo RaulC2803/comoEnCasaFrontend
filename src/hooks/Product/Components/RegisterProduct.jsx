@@ -88,14 +88,11 @@ const RegisterProductForm = (props) => (
         </Form.Row>
 
         <Form.Row>
-          <Form.File
-            id="custom-file-translate-scss"
-            label="Custom file input"
-            lang="en"
-            custom
-          />
+          <Form.Group>
+            <Form.File name="imagen" onChange={props.handleChange} id="exampleFormControlFile1" label="Example file input" />
+          </Form.Group>
         </Form.Row>
-
+        
         <br></br>
 
         <Form.Row>
@@ -103,10 +100,10 @@ const RegisterProductForm = (props) => (
             Registrar
                 </Button>
           <Link to={'/myproducts'}>
-          <Button variant="dark" type="submit" >
-            Cancelar
+            <Button variant="dark" type="submit" >
+              Cancelar
                 </Button>
-                </Link>
+          </Link>
 
         </Form.Row>
       </Form>

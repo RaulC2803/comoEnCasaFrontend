@@ -19,7 +19,7 @@ const RegisterProduct = () => {
     categoria: "comida",
     price: "",
     description: "",
-    images: "sdasdfdergr4g4",
+    imagen: "",
     tags: "",
     stock: ""
   });
@@ -53,9 +53,11 @@ const RegisterProduct = () => {
       case "description":
         setProduct({ ...product, description: value });
         break;
-      case "images":
-        setProduct({ ...product, images: value });
+
+      case "imagen":
+        files = event.target.files[0];
         break;
+
       case "tags":
         setProduct({ ...product, tags: value });
         break;
@@ -75,13 +77,25 @@ const RegisterProduct = () => {
     }
   };
 
+  let files;
+  let itemID;
+  
+  const uploadImage = () => {
+    console.log(files)
+    console.log(fd)
+    const fd = new FormData();
+    fd.append('imageFile', files, files.name)
+    api_Seller.seller.cargarImagen(fd,itemID)
+  }
+
   const id = 22
   const handleSubmit = async (event) => {
     console.log(product)
     setState({ ...state, isLoading: true, error: null });
     try {
       console.log("handlesubmit")
-      const res = await api_Seller.seller.registerProduct(product, id);
+      const res = await api_Seller.seller.registerProduct(product, id).then(items => { itemID = items.idProducto })
+      uploadImage();
       setState({ ...state, isLoading: false, data: res });
     } catch (error) {
       setState({ ...state, isLoading: false, error: error });

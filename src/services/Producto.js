@@ -1,3 +1,4 @@
+import { call } from "file-loader";
 import callApi from "./Service";
 
 const api = {
@@ -23,7 +24,17 @@ const api = {
     getCantStars(id) {
       return callApi(`/producto/stars/${id}`);
     },
+    deleteProduct(id) {
+      return callApi(`/producto/eliminar/${id}`, {
+        method: "DELETE",
+      });
+    },
+    actualizarProduct(data, id) {
+      return callApi(`/producto/actualizar/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(data),
+      });
+    },
   },
 };
-
 export default api;

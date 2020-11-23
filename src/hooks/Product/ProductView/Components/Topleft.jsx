@@ -10,7 +10,7 @@ const TopleftForm = (props) => (
     <Row className="container-parts">
       <Col>
         <div className="image-productview">
-          <Image src={test} />
+          <Image src={"https://i.ibb.co/p1RBVL8/Diversidad-Asegurada.png"} />
         </div>
       </Col>
       <Col>

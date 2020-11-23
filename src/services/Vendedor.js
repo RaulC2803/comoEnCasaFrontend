@@ -14,6 +14,12 @@ const api = {
         body: JSON.stringify(data),
       });
     },
+    cargarImagen(data, id) {
+      return callApi(`/producto/upload_imagen_producto/${id}`, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+    }
   },
 };
 

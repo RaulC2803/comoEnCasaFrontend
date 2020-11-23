@@ -5,12 +5,9 @@ import "./style/Resena.css";
 const Resena = () => (
   <Row className="row-review">
     <Col>
-      <label className="user-review">Jorge Nitales</label>
+      <label className="user-review">Eliseo Vargas</label>
       <p className="text-review">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium
-        debitis corporis sint harum! Tenetur, earum. Quam repellat itaque ex in
-        autem doloremque cupiditate officia dolor, repudiandae dicta voluptate
-        aperiam quas!
+        Producto de calidad, Lo recomiendo al 100%!!! Lo volvere a comprar. Muchas gracias
       </p>
     </Col>
   </Row>
